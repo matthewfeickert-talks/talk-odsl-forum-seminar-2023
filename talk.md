@@ -1,17 +1,16 @@
 class: middle, center, title-slide
 count: false
 
-# Software Citation in HEP:<br> Current State and<br> Recommendations for the Future
+# Distributing your Science:<br> Turning analyses into scientific tools
 .large.blue[Matthew Feickert]<br>
 .large[(University of Wisconsin-Madison)]
 <br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 <br>
-Daniel Katz, Mark Neubauer, Elizabeth Sexton-Kennedy, Graeme Stewart
 
-[International Conference on Computing in High Energy and Nuclear Physics (CHEP) 2023](https://indico.jlab.org/event/459/contributions/11688/)
+ORIGINS Data Science Lab Forum
 
-May 8th, 2023
+September 8th, 2023
 
 ---
 # Co-conveners
