@@ -20,6 +20,25 @@ September 8th, 2023
 * .bold[Talk time]: 30 to 45 minutes
 
 ---
+# Why and what we're discussing
+
+.kol-1-2[
+.large[
+* Postdoc in high energy physics and data science at University of Wisconsin-Madison Data Science Institute
+* Analysis Systems area lead for IRIS-HEP
+* Lucky to be an ATLAS colleague of the Heinrich group :)
+* Care about .bold[reusable] open science
+]
+]
+.kol-1-2[
+.center.width-60[[![logo_IRIS-HEP](assets/logos/logo_institution.png)](https://datascience.wisc.edu/institute/)]
+
+.center.width-50[[![logo_IRIS-HEP](assets/logos/logo_IRIS-HEP.png)](https://iris-hep.org/)]
+
+.center.width-60[[![logo_IRIS-HEP](assets/logos/logo_ATLAS.png)](https://zenodo.org/)]
+]
+
+---
 # Knowledgeable colleagues
 
 <br>
