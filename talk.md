@@ -20,7 +20,7 @@ September 8th, 2023
 * .bold[Talk time]: 30 to 45 minutes
 
 ---
-# Why and what we're discussing
+# My motivations on this topic
 
 .kol-1-2[
 .large[
@@ -31,7 +31,7 @@ September 8th, 2023
 ]
 ]
 .kol-1-2[
-.center.width-60[[![logo_IRIS-HEP](assets/logos/logo_institution.png)](https://datascience.wisc.edu/institute/)]
+.center.width-70[[![logo_IRIS-HEP](assets/logos/logo_institution.png)](https://datascience.wisc.edu/institute/)]
 
 .center.width-50[[![logo_IRIS-HEP](assets/logos/logo_IRIS-HEP.png)](https://iris-hep.org/)]
 
@@ -63,6 +63,34 @@ Princeton University
 ]
 
 .center[Most of what we will discuss today has been covered extensively by them]
+
+---
+# Hypothetical workflow for the typical scientist
+
+<!-- TODO: Spread this out across multiple slides with images -->
+
+.huge[
+1. Work on idea for paper with collaborators
+2. Do exploratory analysis in scripts and Jupyter ecosystem
+3. As research progresses need to write more complicated functions and workflows
+4. Code begins to sprawl across multiple directories
+5. Software dependencies begin to become more complicated
+6. The code "works on my machine", but what about your collaborators?
+]
+
+.center.huge.bold[People heroically press forward, but this is painful, and not reusable]
+
+---
+# Reusable science, step by step
+
+* In this first scenario, you will probably see a lot of `PYTHONPATH` manipulation and `utils.py` floating about
+
+.bold[Example:] `examples/edit_import_path/`
+
+```python
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], ".."))
+```
 
 ---
 # Software Citation and Recognition Workshop
