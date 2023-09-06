@@ -83,7 +83,7 @@ Princeton University
 ---
 # Reusable science, step by step
 
-* In this first scenario, you will probably see a lot of `PYTHONPATH` manipulation and `utils.py` floating about
+* In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py` floating about
 
 .bold[Example:] `examples/edit_import_path/`
 
@@ -91,6 +91,10 @@ Princeton University
 import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 ```
+
+* This is _already better_ than having everything in a single massive file
+* However, now things are tied to this exact relative path on your computer and are brittle to refactoring and change
+* But we can do much better
 
 ---
 # Software Citation and Recognition Workshop
