@@ -13,6 +13,13 @@ ORIGINS Data Science Lab Forum
 September 8th, 2023
 
 ---
+
+# Talk Notes
+
+* **Abstract**: Scientific analysis is driven forward by software, which is often created and developed by the same scientists performing the analysis. As the expected skill set breadth of the modern scientist continues to grow with the rapid progress of computational techniques, the challenge of productionizing scripts and examples into robust and reusable computational tools can be daunting. This seminar will provide best practice resources, motivating examples, and demonstrations for how scientists can transform real world analyses into reusable, publicly distributed scientific tools using modern open source tool chains. The focus will be on the scientific Python ecosystem and build tools, but will include demonstrations of Pythonic bindings to C++ tooling as well as examples from the Julia community.
+* **Talk time**: 30 to 45 minutes
+
+---
 # Co-conveners
 
 <br>
