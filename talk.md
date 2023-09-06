@@ -20,39 +20,26 @@ September 8th, 2023
 * **Talk time**: 30 to 45 minutes
 
 ---
-# Co-conveners
+# Knowledgeable colleagues
 
 <br>
 
 .grid[
-.kol-1-4.center[
-<!-- https://avatars.githubusercontent.com/u/2913845?v=4 -->
-.circle.width-90[![Daniel](figures/collaborators/katz.jpg)]
+.kol-1-2.center[
+<!-- https://avatars.githubusercontent.com/u/4616906?v=4 -->
+.circle.width-55[![Henry](figures/collaborators/schreiner.png)]
 
-[Daniel Katz](https://danielskatz.org/)
+[Henry Schreiner](http://iscinumpy.dev/)
 
-University of Illinois at Urbana-Champaign/<br>NCSA
+Princeton University/IRIS-HEP/PyPA/Scikit-Build
 ]
-.kol-1-4.center[
-.circle.width-95[![Mark](figures/collaborators/neubauer.png)]
+.kol-1-2.center[
+<!-- https://avatars.githubusercontent.com/u/1248413?v=4 -->
+.circle.width-50[![Angus](figures/collaborators/hollands.jpg)]
 
-[Mark Neubauer](https://www.marksneubauer.com/)
+[Angus Hollands](https://github.com/agoose77)
 
-University of Illinois at Urbana-Champaign
-]
-.kol-1-4.center[
-.circle.width-80[![Liz](figures/collaborators/sexton-kennedy.jpg)]
-
-[Elizabeth<br>Sexton-Kennedy](https://computing.fnal.gov/liz-sexton-kennedy/)
-
-FNAL
-]
-.kol-1-4.center[
-.circle.width-85[![Graeme](figures/collaborators/stewart.png)]
-
-[Graeme Stewart](https://ep-rnd.web.cern.ch/person/graeme-stewart)
-
-CERN
+Princeton University
 ]
 ]
 
