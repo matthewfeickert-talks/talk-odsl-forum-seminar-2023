@@ -58,7 +58,7 @@ Princeton University, IRIS-HEP, PyPA, Scikit-Build
 
 [Angus Hollands](https://github.com/agoose77)
 
-Princeton University
+Princeton University, The Executable Books Project
 ]
 ]
 
@@ -95,6 +95,31 @@ sys.path.insert(1, os.path.join(sys.path[0], ".."))
 * This is _already better_ than having everything in a single massive file
 * However, now things are tied to this exact relative path on your computer and are brittle to refactoring and change
 * But we can do much better
+
+---
+# Next steps: Making your code installable
+
+* Use a `src/` directory layout and then use a packaging tool
+* Allow for editable installation `python -m pip install --editable .` so that you can develop and use the code as you go
+* Compiled code extensions or pure Python?
+* Application or library?
+
+---
+# Going beyond, packaging
+
+* Use `build` to create source distributions (`sdist`) and wheels
+* Distribute to PyPI
+* Profit
+* conda-forge and binaries
+
+---
+# Best practices
+
+* scientific-python cookie
+* Engage with the experts (RSEs)
+* Community guidance exists (Scientific Python)
+* How does this apply to machine learning code?
+   - Zenodo
 
 ---
 # Software Citation and Recognition Workshop
