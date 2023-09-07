@@ -182,7 +182,15 @@ Although that way may not be obvious at first unless you're Dutch.
 # Next steps: Packaging your code
 
 .huge[
-* Maybe not so much. :(
+Maybe not so much. :(
+]
+
+.center.width-100[
+[![level-up-your-python-distributions](figures/level-up-your-python-distributions.png)](https://henryiii.github.io/level-up-your-python/notebooks/2.7%20Creating%20Packages.html)
+]
+
+.center.huge[
+You might be asking: Why is there more than one thing?
 ]
 
 ---
