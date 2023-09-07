@@ -7,8 +7,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rosen"
-# dynamic = ["version"]
-version="0.0.1"
+dynamic = ["version"]
 description = "Example package for demonstration"
 readme = "README.md"
 license = { text = "MIT" }  # SPDX short identifier
@@ -46,6 +45,8 @@ source = "vcs"
 
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"
+# Need to give root as we aren't at the same level as the git repo
+root = "../.."
 
 [tool.hatch.build.hooks.vcs]
 version-file = "src/rosen/_version.py"
