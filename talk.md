@@ -217,15 +217,21 @@ The .red[bad news]: Python packaging has expanded .bold[dramatically] in the las
 # Next steps: Packaging your code
 
 .huge[
-The .green[okay news]: You can probably default to the simplest thing and it will be fine
+The .green[okay news]: You can probably default to the simplest thing
 ]
 
+* pure Python: Probably [`hatch`](https://github.com/ofek/hatch)
+* compiled extensions: Probably [`setuptools` + `pybind11`](https://pybind11.readthedocs.io/)
+
 .kol-1-2[
+<br>
 <p style="text-align:center;">
    <a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">
       <img src="figures/pypa-packaging-tutorial.png"/; width=100%>
    </a>
 </p>
+
+.caption[[Python Packaging User Guide, Packaging Python Projects Tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/)]
 ]
 .kol-1-2[
 <p style="text-align:center;">
@@ -233,7 +239,14 @@ The .green[okay news]: You can probably default to the simplest thing and it wil
       <img src="figures/scientific-python-packaging.png"/; width=100%>
    </a>
 </p>
+
+.caption[[Scientific Python Library Development Guide](https://learn.scientific-python.org/development/)]
 ]
+
+---
+# Simple packaging example
+
+.huge[Modern [PEP 518](https://peps.python.org/pep-0518/) compliant build backends just need a single file: `pyproject.toml`]
 
 ---
 # How to do this?
