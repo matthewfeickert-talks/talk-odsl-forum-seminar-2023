@@ -83,7 +83,9 @@ Princeton University, The Executable Books Project
 ---
 # Reusable science, step by step
 
-* In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py` floating about
+.large[
+In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py`
+]
 
 .huge[
 ```
@@ -101,7 +103,9 @@ examples/edit_sys_path
 ---
 # Reusable science, step by step
 
-* In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py` floating about
+.large[
+In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py`
+]
 
 .large[
 ```python
@@ -112,12 +116,33 @@ from pathlib import Path
 # Make ./code/utils.py visible to sys.path
 sys.path.insert(1, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
+
+x0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])
+result = minimize(rosen, x0, method="BFGS",
+   jac=rosen_der, options={"disp": True})
+optimized_params = result.x
 ```
 ]
 
+---
+# Reusable science, step by step
+
+.large[
+In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py`
+
 * This is _already better_ than having everything in a single massive file
-* However, now things are tied to this exact relative path on your computer and are brittle to refactoring and change
-* But we can do much better
+* However, now things are tied to this relative path on your computer
+
+```python
+# Make ./code/utils.py visible to sys.path
+sys.path.insert(1, str(Path(__file__).parent / "code"))
+from utils import rosen, rosen_der
+```
+
+and are brittle to refactoring and change
+
+* But we can do much better!
+]
 
 ---
 # Next steps: Making your code installable
