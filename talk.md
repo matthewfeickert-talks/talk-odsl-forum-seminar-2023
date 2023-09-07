@@ -89,7 +89,11 @@ Princeton University, The Executable Books Project
 
 ```python
 import sys
-sys.path.insert(1, os.path.join(sys.path[0], ".."))
+from pathlib import Path
+
+# Make ./code/utils.py visible to sys.path
+sys.path.insert(1, (Path(__file__).parent / "code").as_posix())
+from utils import rosen, rosen_der
 ```
 
 * This is _already better_ than having everything in a single massive file
