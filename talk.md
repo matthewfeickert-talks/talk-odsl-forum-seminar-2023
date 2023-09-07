@@ -119,8 +119,9 @@ from utils import rosen, rosen_der
 
 x0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])
 result = minimize(rosen, x0, method="BFGS",
-   jac=rosen_der, options={"disp": True})
+                  jac=rosen_der, options={"disp": True})
 optimized_params = result.x
+# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])
 ```
 ]
 
@@ -142,23 +143,6 @@ from utils import rosen, rosen_der
 and are brittle to refactoring and change
 
 * But we can do much better!
-]
-
----
-# Next steps: Packaging your code
-
-.huge[
-* Real emphasis is just that .bold[your code is now installable]
-   - Anywhere your Python virtual environment is active you can use your code
-
-* Use a `src/` directory layout and then use a packaging tool
-* Allow for editable installation
-```
-python -m pip install --editable .
-```
-so that you can develop and use the code as you go
-* Compiled code extensions or pure Python?
-* Application or library?
 ]
 
 ---
@@ -346,8 +330,90 @@ version-file = "src/rosen/_version.py"
 ---
 # Simple packaging example: Installing your code
 
+You can now .bold[locally install] your package into your Python virtual environment
+
 ```
+$ cd examples/simple_packaging
+$ python -m pip install --upgrade pip wheel
+$ python -m pip install .
+Successfully built rosen
+Installing collected packages: rosen
+Successfully installed rosen-0.0.1
+$ python -m pip show rosen
+Name: rosen
+Version: 0.0.1
+Summary: Example package for demonstration
+Home-page:
+Author:
+Author-email: Matthew Feickert <matthew.feickert@cern.ch>
+License: MIT
+Location: ***/talk-odsl-forum-seminar-2023/lib/python3.11/site-packages
+Requires: numpy, scipy
+Required-by:
 ```
+
+---
+# Simple packaging example: Installing your code
+
+.huge[
+and use it anywhere
+]
+
+.large[
+```python
+# example.py
+import numpy as np
+from scipy.optimize import minimize
+
+# We can now import our code
+from rosen.example import rosen, rosen_der
+
+x0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])
+result = minimize(rosen, x0, method="BFGS",
+                  jac=rosen_der, options={"disp": True})
+optimized_params = result.x
+# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])
+```
+]
+
+---
+# Packaging doesn't slow down development
+
+.huge[
+[PEP 518](https://peps.python.org/pep-0518/) compliant build backends allow for "[editable installs](https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs)"
+]
+
+.large[
+```
+$ python -m pip install --upgrade --editable .
+$ python -m pip show rosen | grep --ignore-case 'location'
+Location: ***/talk-odsl-forum-seminar-2023/lib/python3.11/site-packages
+Editable project location: ***/examples/simple_packaging
+```
+]
+
+.huge[
+Editable installs add the files in the development directory to Python’s import path. (Only need to re-installation if you change the project metadata.)
+
+Can .bold[develop] your code under `src/` and have .bold[immediate] access to it
+]
+
+---
+# Next steps: Packaging your code
+
+.huge[
+x Real emphasis is just that .bold[your code is now installable]
+   - Anywhere your Python virtual environment is active you can use your code
+
+x Use a `src/` directory layout and then use a packaging tool
+* Allow for editable installation
+```
+python -m pip install --editable .
+```
+so that you can develop and use the code as you go
+* Compiled code extensions or pure Python?
+* Application or library?
+]
 
 ---
 # How to do this?
