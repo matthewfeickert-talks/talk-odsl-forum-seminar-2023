@@ -85,9 +85,10 @@ Princeton University, The Executable Books Project
 
 * In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py` floating about
 
-.bold[Example:] `examples/edit_import_path/`
+.bold[Example:] `examples/edit_sys_path/`
 
 ```python
+# example.py
 import sys
 from pathlib import Path
 
