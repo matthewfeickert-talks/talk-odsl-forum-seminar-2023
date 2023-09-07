@@ -248,6 +248,28 @@ The .green[okay news]: You can probably default to the simplest thing
 
 .huge[Modern [PEP 518](https://peps.python.org/pep-0518/) compliant build backends just need a single file: `pyproject.toml`]
 
+```
+$ tree examples/simple_packaging
+examples/simple_packaging
+├── LICENSE
+├── pyproject.toml  # controls packaging and interactions with tools
+├── README.md
+├── src
+│   └── rosen
+│       ├── example.py
+│       ├── __init__.py
+│       └── _version.py
+└── tests
+    └── test_example.py
+
+3 directories, 7 files
+```
+
+---
+# Simple packaging example
+
+.huge[Modern [PEP 518](https://peps.python.org/pep-0518/) compliant build backends just need a single file: `pyproject.toml`]
+
 ---
 # How to do this?
 
@@ -269,6 +291,39 @@ The .green[okay news]: You can probably default to the simplest thing
 * Community guidance exists (Scientific Python)
 * How does this apply to machine learning code?
    - Zenodo
+
+---
+# Recommendations: Tooling
+
+.huge[
+Don't start your next Python project from scratch! Use the Scientific Python library development Cookiecutter: [`cookie`](https://github.com/scientific-python/cookie)
+
+```
+$ pipx install cookiecutter
+$ cookiecutter gh:scientific-python/cookie
+#  [1/14] The name of your project (package):
+# ...
+```
+
+`cookie` will setup your repository for you with templated layouts for 11 different build backends and adheres to packaging and development best practices.
+]
+
+---
+# Recommendations: Collaboration
+
+.large[
+Find and start working with Research Software Engineers (RSE).
+
+* I don't think that most scientists care/get excited about learning packaging tools. We just want things to work. RSEs can make that easier and are SUPER knowledgeable!
+   - I'm among the "not excited". I care about packaging because I care about reusable tools for science.
+]
+
+<p style="text-align:center;">
+   <a href="https://society-rse.org/">
+      <img src="figures/rse-page.png"; width=40%>
+   </a>
+</p>
+.caption[[Society of Research Software Engineering](https://society-rse.org/)]
 
 ---
 # Software Citation and Recognition Workshop
