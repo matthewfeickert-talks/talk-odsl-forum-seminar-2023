@@ -197,6 +197,45 @@ You might be asking: Why is there more than one thing?
 ]
 
 ---
+# Next steps: Packaging your code
+
+.huge[
+The .blue[good news]: Python packaging has improved .bold[dramatically] in the last 5 years
+]
+
+* It has never been easier to just point your package manager to some code locally, or on the internet, and get working Python code installed and running on your machine regardless of operating system or architecture
+* This is a small .bold[miracle]
+
+.huge[
+The .red[bad news]: Python packaging has expanded .bold[dramatically] in the last 5 years
+]
+
+* By cratering standards the PyPA allowed for an ecosystem of packaging backends to be created to tackle various problems (this is good!)
+* This means that our The Zen of Python expectations are violated and we need to make design choices (hard for beginners)
+
+---
+# Next steps: Packaging your code
+
+.huge[
+The .green[okay news]: You can probably default to the simplest thing and it will be fine
+]
+
+.kol-1-2[
+<p style="text-align:center;">
+   <a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">
+      <img src="figures/pypa-packaging-tutorial.png"/; width=100%>
+   </a>
+</p>
+]
+.kol-1-2[
+<p style="text-align:center;">
+   <a href="https://learn.scientific-python.org/development/guides/packaging-simple/">
+      <img src="figures/scientific-python-packaging.png"/; width=100%>
+   </a>
+</p>
+]
+
+---
 # How to do this?
 
 * Selecting your choice
