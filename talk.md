@@ -92,7 +92,7 @@ import sys
 from pathlib import Path
 
 # Make ./code/utils.py visible to sys.path
-sys.path.insert(1, (Path(__file__).parent / "code").as_posix())
+sys.path.insert(1, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 ```
 

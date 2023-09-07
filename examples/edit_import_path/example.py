@@ -6,7 +6,7 @@ import numpy as np
 from scipy.optimize import minimize
 
 # Make ./code/utils.py visible to sys.path
-sys.path.insert(1, (Path(__file__).parent / "code").as_posix())
+sys.path.insert(1, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 
 x0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])
