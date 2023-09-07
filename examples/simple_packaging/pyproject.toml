@@ -7,7 +7,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rosen"
-dynamic = ["version"]
+# dynamic = ["version"]
+version="0.0.1"
 description = "Example package for demonstration"
 readme = "README.md"
 license = { text = "MIT" }  # SPDX short identifier
@@ -20,7 +21,8 @@ maintainers = [
 requires-python = ">=3.8"
 
 dependencies = [
-  "typing_extensions",
+    "scipy>=1.6.0",
+    "numpy",  # compatible versions controlled through scipy
 ]
 
 classifiers = [
