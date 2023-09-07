@@ -145,15 +145,53 @@ and are brittle to refactoring and change
 ]
 
 ---
-# Next steps: Making your code installable
+# Next steps: Packaging your code
+
+.huge[
+* Real emphasis is just that .bold[your code is now installable]
+   - Anywhere your Python virtual environment is active you can use your code
 
 * Use a `src/` directory layout and then use a packaging tool
-* Allow for editable installation `python -m pip install --editable .` so that you can develop and use the code as you go
+* Allow for editable installation
+```
+python -m pip install --editable .
+```
+so that you can develop and use the code as you go
 * Compiled code extensions or pure Python?
 * Application or library?
+]
 
 ---
-# Going beyond, packaging
+# Next steps: Packaging your code
+
+.huge[
+* Real emphasis is just that .bold[your code is now installable]
+   - Anywhere your Python virtual environment is active you can use your code
+
+* So following The Zen of Python this should be very straightforward?
+]
+.large[
+```
+$ python -c 'import this' | grep obvious
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+```
+]
+
+---
+# Next steps: Packaging your code
+
+.huge[
+* Maybe not so much. :(
+]
+
+---
+# How to do this?
+
+* Selecting your choice
+
+---
+# Going beyond, distributing
 
 * Use `build` to create source distributions (`sdist`) and wheels
 * Distribute to PyPI
@@ -209,6 +247,14 @@ ___
 * Work with RSEs
 * TBD
 ]
+
+---
+# References
+
+1. [Level Up Your Python](https://henryiii.github.io/level-up-your-python/), Henry Schreiner
+2. [Python Packaging User Guide, Packaging Python Projects Tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/), The PyPA
+3. [Scientific Python Library Development Guide](https://learn.scientific-python.org/development/), Scientific Python (originally made by Scikit-HEP)
+4. [`cookie`](https://github.com/scientific-python/cookie), Scientific Python (originally made by Scikit-HEP)
 
 ---
 class: end-slide, center
