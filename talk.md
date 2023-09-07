@@ -85,8 +85,25 @@ Princeton University, The Executable Books Project
 
 * In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py` floating about
 
-.bold[Example:] `examples/edit_sys_path/`
+.huge[
+```
+$ tree examples/edit_sys_path
+examples/edit_sys_path
+├── code
+│   └── utils.py  # helper functions rosen, rosen_der
+├── example.py  # want to import rosen, rosen_der
+└── jupytext.toml
 
+1 directory, 3 files
+```
+]
+
+---
+# Reusable science, step by step
+
+* In this first scenario, you will probably see a lot of `sys.path` manipulation and `utils.py` floating about
+
+.large[
 ```python
 # example.py
 import sys
@@ -96,6 +113,7 @@ from pathlib import Path
 sys.path.insert(1, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 ```
+]
 
 * This is _already better_ than having everything in a single massive file
 * However, now things are tied to this exact relative path on your computer and are brittle to refactoring and change
