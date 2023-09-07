@@ -185,9 +185,12 @@ Although that way may not be obvious at first unless you're Dutch.
 Maybe not so much. :(
 ]
 
-.center.width-100[
-[![level-up-your-python-distributions](figures/level-up-your-python-distributions.png)](https://henryiii.github.io/level-up-your-python/notebooks/2.7%20Creating%20Packages.html)
-]
+<!-- Centering wasn't working without HTML -->
+<p style="text-align:center;">
+   <a href="https://github.com/scientific-python/cookie">
+      <img src="figures/cookie-backend-options.png"/; width=50%>
+   </a>
+</p>
 
 .center.huge[
 You might be asking: Why is there more than one thing?
