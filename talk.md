@@ -266,9 +266,88 @@ examples/simple_packaging
 ```
 
 ---
-# Simple packaging example
+# Simple packaging example: `pyproject.toml`
 
-.huge[Modern [PEP 518](https://peps.python.org/pep-0518/) compliant build backends just need a single file: `pyproject.toml`]
+.huge[
+What is `.toml`?
+
+
+> "TOML aims to be a .bold[minimal configuration file format] that's easy to read due to obvious semantics. TOML is designed to map unambiguously to a hash table. TOML should be .bold[easy to parse into data structures] in a wide variety of languages." &mdash; https://toml.io/ (emphasis mine)
+
+In recent years TOML has seen a rise in popularity for configuration files and lock files. Things that need to be easy to read (humans) and easy to parse (machines).
+]
+
+---
+# Simple packaging example: `pyproject.toml`
+
+.huge[
+Defining how your project should get .bold[built]
+]
+
+```toml
+[build-system]
+requires = [
+    "hatchling>=1.13.0",
+    "hatch-vcs>=0.3.0",
+]
+build-backend = "hatchling.build"
+
+...
+```
+
+---
+# Simple packaging example: `pyproject.toml`
+
+.huge[
+Defining project .bold[metadata and requirements]
+]
+
+```toml
+[project]
+name = "rosen"
+dynamic = ["version"]
+description = "Example package for demonstration"
+readme = "README.md"
+license = { text = "MIT" }  # SPDX short identifier
+authors = [
+  { name = "Matthew Feickert", email = "matthew.feickert@cern.ch" },
+]
+requires-python = ">=3.8"
+
+dependencies = [
+    "scipy>=1.6.0",
+    "numpy",  # compatible versions controlled through scipy
+]
+
+...
+```
+
+---
+# Simple packaging example: `pyproject.toml`
+
+.huge[
+Configuring .bold[tooling options and interactions] with other tools
+]
+
+```toml
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
+# Need to give root as we aren't at the same level as the git repo
+root = "../.."
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/rosen/_version.py"
+...
+```
+
+---
+# Simple packaging example: Installing your code
+
+```
+```
 
 ---
 # How to do this?
