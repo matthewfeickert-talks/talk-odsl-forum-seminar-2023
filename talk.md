@@ -532,7 +532,10 @@ $ python -m pip install \
 (more reasonable font size, and more common, example)
 
 ```
+# Works for pure-Python packages
 $ python -m pip install --upgrade "git+https://github.com/scikit-hep/pyhf.git"
+# as well as packages with compiled extensions
+$ python -m pip install --upgrade "git+https://github.com/scikit-hep/iminuit.git"
 ```
 
 ---
