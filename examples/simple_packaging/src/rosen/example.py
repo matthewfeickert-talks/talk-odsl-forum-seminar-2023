@@ -8,6 +8,7 @@ def rosen(x):
 
 
 def rosen_der(x):
+    """Gradient of the Rosenbrock function"""
     xm = x[1:-1]
     xm_m1 = x[:-2]
     xm_p1 = x[2:]
