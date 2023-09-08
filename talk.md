@@ -26,16 +26,20 @@ September 8th, 2023
 .large[
 * Postdoc in high energy physics and data science at University of Wisconsin-Madison Data Science Institute
 * Analysis Systems area lead for IRIS-HEP
-* Lucky to be an ATLAS colleague of the Heinrich group :)
-* Care about .bold[reusable] open science
+* Member of ATLAS collaboration
+   - Happy collaborator of TUM ATLAS group!
+* Administrator of Scikit-HEP community organization
+* Care about .bold[reusable] open science to be able to push physics forward at the .bold[community scale]
 ]
 ]
 .kol-1-2[
-.center.width-70[[![logo_IRIS-HEP](assets/logos/logo_institution.png)](https://datascience.wisc.edu/institute/)]
+.center.width-65[[![logo_IRIS-HEP](assets/logos/logo_institution.png)](https://datascience.wisc.edu/institute/)]
 
-.center.width-50[[![logo_IRIS-HEP](assets/logos/logo_IRIS-HEP.png)](https://iris-hep.org/)]
+.center.width-30[[![logo_IRIS-HEP](assets/logos/logo_IRIS-HEP.png)](https://iris-hep.org/)]
 
-.center.width-60[[![logo_IRIS-HEP](assets/logos/logo_ATLAS.png)](https://zenodo.org/)]
+.center.width-40[[![logo_ATLAS](assets/logos/logo_ATLAS.png)](https://atlas.cern/)]
+
+.center.width-30[[![logo_ATLAS](figures/scikit-hep-logo.svg)](https://scikit-hep.org/)]
 ]
 
 ---
