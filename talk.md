@@ -399,6 +399,33 @@ Can .bold[develop] your code under `src/` and have .bold[immediate] access to it
 ]
 
 ---
+# Going further: Distributing code
+
+.huge[
+If your code is publicly available on the WWW in a Git repository, you've already done a version of distribution!
+]
+
+.tiny[
+(tiny font sorry)
+```
+# General pattern is:
+# python -m pip install "project @ git+https://example.com/repo/project.git@branch#subdirectory=path"
+$ python -m pip install \
+  "git+https://github.com/matthewfeickert-talks/talk-odsl-forum-seminar-2023.git#subdirectory=examples/simple_packaging"
+```
+]
+
+(more reasonable font size, and more common, example)
+
+```
+$ python -m pip install --upgrade "git+https://github.com/scikit-hep/pyhf.git"
+```
+
+.huge[
+Caveat: This only works for pure-Python packages
+]
+
+---
 # Next steps: Packaging your code
 
 .huge[
@@ -406,7 +433,7 @@ x Real emphasis is just that .bold[your code is now installable]
    - Anywhere your Python virtual environment is active you can use your code
 
 x Use a `src/` directory layout and then use a packaging tool
-* Allow for editable installation
+x Allow for editable installation
 ```
 python -m pip install --editable .
 ```
@@ -414,11 +441,6 @@ so that you can develop and use the code as you go
 * Compiled code extensions or pure Python?
 * Application or library?
 ]
-
----
-# How to do this?
-
-* Selecting your choice
 
 ---
 # Going beyond, distributing
