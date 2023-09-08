@@ -535,10 +535,6 @@ $ python -m pip install \
 $ python -m pip install --upgrade "git+https://github.com/scikit-hep/pyhf.git"
 ```
 
-.huge[
-Caveat: This only works for pure-Python packages
-]
-
 ---
 # Going further: Distributing packages
 
