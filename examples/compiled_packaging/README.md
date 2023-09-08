@@ -1,1 +1,1 @@
-# REAMDE for example rosen package
+# REAMDE for example rosen-cpp package using compiled extensions

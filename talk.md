@@ -403,6 +403,123 @@ Can .bold[develop] your code under `src/` and have .bold[immediate] access to it
 ]
 
 ---
+# Packaging compiled extensions
+
+.huge[
+With modern packaging infrastructure, packaging compiled extensions requires small extra work
+]
+
+```
+$ tree examples/compiled_packaging
+examples/compiled_packaging
+├── CMakeLists.txt  # Addition of CMake
+├── LICENSE
+├── pyproject.toml  # build backend change
+├── README.md
+├── src
+│   ├── basic_math.cpp  # C++ extension
+│   └── rosen_cpp
+│       ├── example.py
+│       └── __init__.py
+└── tests
+    └── test_example.py
+
+3 directories, 8 files
+```
+
+---
+# Packaging compiled extensions
+
+.huge[
+.bold[`pyproject.toml`]:
+
+Swap build system to [`scikit-build-core`](https://scikit-build-core.readthedocs.io/) + [`pybind11`](https://github.com/pybind/pybind11)
+
+```toml
+[build-system]
+requires = [
+  "scikit-build-core",
+  "pybind11"
+  ]
+build-backend = "scikit_build_core.build"
+
+...
+```
+]
+
+---
+# Packaging compiled extensions
+
+.huge[
+.bold[`CMakeLists.txt`]:
+]
+
+.large[
+```
+# Specify CMake version and project language
+cmake_minimum_required(VERSION 3.15...3.26)
+project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)
+
+# Setup pybind11
+set(PYBIND11_FINDPYTHON ON)
+find_package(pybind11 CONFIG REQUIRED)
+
+# Add the pybind11 module to build targets
+pybind11_add_module(basic_math MODULE src/basic_math.cpp)
+install(TARGETS basic_math DESTINATION ${SKBUILD_PROJECT_NAME})
+```
+]
+
+---
+# Packaging compiled extensions
+
+.huge[
+.bold[`src/basic_math.cpp`]:
+]
+
+.large[
+```c++
+#include <pybind11/pybind11.h>
+
+int add(int i, int j) { return i + j; }
+
+namespace py = pybind11;
+
+PYBIND11_MODULE(basic_math, m) {
+  m.def("add", &add, R"pbdoc(
+      Add two numbers
+  )pbdoc");
+
+...
+
+}
+```
+]
+
+---
+# Packaging compiled extensions: Installing
+
+Installing locally is the same as for the pure-Python example:
+
+```
+$ cd examples/simple_packaging
+$ python -m pip install --upgrade pip wheel
+$ python -m pip install .
+Successfully built rosen-cpp
+Installing collected packages: rosen-cpp
+Successfully installed rosen-cpp-0.0.1
+```
+
+Module name is that given in C++:
+
+```python
+from rosen_cpp import basic_math
+
+basic_math.add(1, 2)
+# 3
+```
+
+---
 # Going further: Distributing packages
 
 .huge[
