@@ -542,13 +542,18 @@ Julia's package manager [`Pkg.jl`](https://pkgdocs.julialang.org/v1/) provides u
 ]
 
 ---
-# Best practices
+# Areas still to discuss another time
 
-* scientific-python cookie
-* Engage with the experts (RSEs)
-* Community guidance exists (Scientific Python)
-* How does this apply to machine learning code?
-   - Zenodo
+.huge[
+* Full environment specification with Linux (Open Container Initiative (OCI)) container images (Docker, Apptainer, Podman)
+* Orchestration of multiple environments inside of an analysis
+   - Using workflow languages
+* The difficult realities of long term preservation
+   - Assumptions of present technologies don't translate forever into the future, infrastructure goes away
+   - How to store files that aren't "code" (e.g. images, training data, database files) &mdash; c.f. Zenodo
+* What analysis reuse looks like
+   - [RECAST](https://arxiv.org/abs/1010.2506) (particle physics)
+]
 
 ---
 # Recommendations: Tooling
@@ -567,6 +572,20 @@ $ cookiecutter gh:scientific-python/cookie
 ]
 
 ---
+# Recommendations: Community Guides
+
+.huge[
+Packaging standards and best practices continue to change and get better. Instead of trying to maintain your own resources .bold[follow and engage] with community resources created by the teams that are building the tools and infrastructure.
+]
+
+<p style="text-align:center;">
+   <a href="https://learn.scientific-python.org/development/">
+      <img src="figures/scientific-python-development-guide.png"; width=60%>
+   </a>
+</p>
+.caption[[Scientific Python Library Development Guide](https://learn.scientific-python.org/development/)]
+
+---
 # Recommendations: Collaboration
 
 .large[
@@ -582,26 +601,6 @@ Find and start working with Research Software Engineers (RSE).
    </a>
 </p>
 .caption[[Society of Research Software Engineering](https://society-rse.org/)]
-
----
-# Software Citation and Recognition Workshop
-
-.huge[
-* [2022 HSF/IRIS-HEP Blueprint Process Workshop](https://indico.cern.ch/event/1211229/)
-<br>
-<br>
-.italic[This meeting aims to provide a community discussion around ways in which HEP .bold[experiments handle citation of software] and .bold[recognition for software efforts] that enable physics results disseminated to the public.]
-<br>
-<br>
-* Had representation from:
-   - .bold[Experiments]: ATLAS, CMS, LHCb
-   - .bold[Software project communities]: ROOT Team, Scikit-HEP, MCnet, IRIS-HEP
-   - .bold[Publishers]: INSPIRE, Elsevier, Journal of Open Source Software (JOSS)
-]
-
-___
-
-.smaller[This work was supported by the National Science Foundation under Cooperative Agreement OAC-1836650. [![NSF-1836650](https://img.shields.io/badge/NSF-1836650-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1836650)]
 
 ---
 # Recommendations: Zenodo
