@@ -211,7 +211,7 @@ The .green[okay news]: You can probably default to the simplest thing
 <br>
 <p style="text-align:center;">
    <a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">
-      <img src="figures/pypa-packaging-tutorial.png"/; width=100%>
+      <img src="figures/pypa-packaging-tutorial.png"; width=100%>
    </a>
 </p>
 
@@ -220,7 +220,7 @@ The .green[okay news]: You can probably default to the simplest thing
 .kol-1-2[
 <p style="text-align:center;">
    <a href="https://learn.scientific-python.org/development/guides/packaging-simple/">
-      <img src="figures/scientific-python-packaging.png"/; width=100%>
+      <img src="figures/scientific-python-packaging.png"; width=100%>
    </a>
 </p>
 
@@ -347,7 +347,7 @@ Home-page:
 Author:
 Author-email: Matthew Feickert <matthew.feickert@cern.ch>
 License: MIT
-Location: ***/talk-odsl-forum-seminar-2023/lib/python3.11/site-packages
+Location: ***/lib/python3.11/site-packages
 Requires: numpy, scipy
 Required-by:
 ```
@@ -387,7 +387,7 @@ optimized_params = result.x
 ```
 $ python -m pip install --upgrade --editable .
 $ python -m pip show rosen | grep --ignore-case 'location'
-Location: ***/talk-odsl-forum-seminar-2023/lib/python3.11/site-packages
+Location: ***/lib/python3.11/site-packages
 Editable project location: ***/examples/simple_packaging
 ```
 ]
@@ -423,6 +423,60 @@ $ python -m pip install --upgrade "git+https://github.com/scikit-hep/pyhf.git"
 
 .huge[
 Caveat: This only works for pure-Python packages
+]
+
+---
+# Going further: Distributing code
+
+.huge[
+Ideally we'd prefer a more organized approach: distribution through a .bold[package index]
+
+First we need to create .bold[distributions] of our packaged code.
+
+Distributions that `pip` can install:
+
+* .bold[[source distribution (sdist)](https://packaging.python.org/en/latest/glossary/#term-Source-Distribution-or-sdist)]: A tarfile (`.tar.gz`) of the source files of our package (subset of all the files in the repository)
+* .bold[[wheel](https://packaging.python.org/en/latest/glossary/#term-Built-Distribution)]: A zipfile (`.whl`) of the file system structure and package metadata with any dependencies prebuilt
+   - No arbitrary code execution, only decompressing and copying of files
+]
+
+---
+# Going further: Distributing code
+
+.huge[
+To create these .bold[distributions] from source code, rely on our package .bold[build backend] (e.g. [`hatchling`](https://hatch.pypa.io/)) and .bold[build frontend] tool like [`build`](https://pypa-build.readthedocs.io/en/stable/)
+]
+
+```
+$ python -m pip install --upgrade build
+$ python -m build .
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (hatch-vcs>=0.3.0, hatchling>=1.13.0)
+* Getting build dependencies for sdist...
+* Building sdist...
+* Building wheel from sdist
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (hatch-vcs>=0.3.0, hatchling>=1.13.0)
+* Getting build dependencies for wheel...
+* Building wheel...
+Successfully built rosen-0.0.1.tar.gz and rosen-0.0.1-py3-none-any.whl
+$ ls dist
+rosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz
+```
+
+---
+# Going further: Distributing code
+
+.huge[
+Can now [securely upload](https://blog.pypi.org/posts/2023-04-20-introducing-trusted-publishers/) the distributions under `./dist/` to [.italic[any] package index](https://packaging.python.org/en/latest/guides/hosting-your-own-index/) that understands how to use them.
+
+The most common is the [Python Package Index (PyPI)](https://pypi.org/) which serves as the default package index for `pip`.
+
+<p style="text-align:center;">
+   <a href="https://pypi.org/">
+      <img src="figures/pypi-page.png"; width=45%>
+   </a>
+</p>
 ]
 
 ---
