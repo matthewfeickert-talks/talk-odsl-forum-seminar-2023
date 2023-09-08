@@ -632,7 +632,7 @@ Allow for reproducibility by simply being an list of every file to download from
 
 Should be programmatically generated from a high level requirements file and maintained in version control with your analysis.
 
-* For `pip`: [`pip-tools`](https://pip-tools.readthedocs.io/en/latest/), [`pdm`](https://pdm.fming.dev/)
+* For `pip`: [`pip-tools`](https://pip-tools.readthedocs.io/en/latest/), [`pdm`](https://pdm.fming.dev/), [`pipenv`](https://pipenv.pypa.io/), [`poetry`](https://python-poetry.org/)
 * For `conda` family: [`conda-lock`](https://conda.github.io/conda-lock/), [`pixi`](https://prefix.dev/docs/pixi/)
 ]
 
