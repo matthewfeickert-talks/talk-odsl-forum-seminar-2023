@@ -2,6 +2,7 @@ import numpy as np
 from pytest import approx
 from scipy.optimize import minimize
 
+from rosen_cpp import basic_math
 from rosen_cpp.example import rosen, rosen_der
 
 
@@ -16,3 +17,8 @@ def test_example():
         1.00000044,
         1.00000092,
     ]
+
+
+def test_basic_math():
+    assert basic_math.add(1, 2) == 3
+    assert basic_math.subtract(1, 2) == -1

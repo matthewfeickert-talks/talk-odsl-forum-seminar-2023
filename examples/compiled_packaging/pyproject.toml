@@ -8,7 +8,8 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "rosen-cpp"
-dynamic = ["version"]
+# dynamic = ["version"]
+version = "0.0.1"
 description = "Example package for demonstration"
 readme = "README.md"
 license = { text = "MIT" }  # SPDX short identifier
