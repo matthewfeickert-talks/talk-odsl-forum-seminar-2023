@@ -34,6 +34,10 @@ body {
     color: #0000ff;
 }
 
+.green {
+    color: #008000;
+}
+
 .gray {
     color: #808080;
 }
@@ -224,7 +228,7 @@ td {
     display: block;
     text-align: center;
     font-size: 0.8em;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .circle img {
