@@ -618,9 +618,39 @@ Find and start working with Research Software Engineers (RSE).
 # Summary
 
 .huge[
-* Stuff
-* Work with RSEs
-* TBD
+* Whirlwind tour of lifting analysis code from version control, to packages, distributed binaries, and the rest of the world
+* Not a hopeless bog of technical debt, but community infrastructure built by people who you can collaborate with
+* Reusable code can be a nucleation point for communities
+]
+
+.kol-1-4[
+<p style="text-align:center;">
+   <a href="https://github.com/">
+      <img src="figures/github-mark.svg"; width=95%>
+   </a>
+</p>
+]
+.kol-1-4[
+<p style="text-align:center;">
+   <a href="https://pypi.org/">
+      <img src="figures/pypi-logo.svg"; width=95%>
+   </a>
+</p>
+]
+.kol-1-4[
+<br>
+<p style="text-align:center;">
+   <a href="https://conda-forge.org/">
+      <img src="figures/conda-forge-anvil.png"; width=95%>
+   </a>
+</p>
+]
+.kol-1-4[
+<p style="text-align:center;">
+   <a href="https://paperswithcode.com/">
+      <img src="figures/papers-with-code.png"; width=95%>
+   </a>
+</p>
 ]
 
 ---
