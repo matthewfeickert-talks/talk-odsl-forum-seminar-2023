@@ -773,6 +773,7 @@ Find and start working with Research Software Engineers (RSE).
 2. [Python Packaging User Guide, Packaging Python Projects Tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/), The PyPA
 3. [Scientific Python Library Development Guide](https://learn.scientific-python.org/development/), Scientific Python (originally made by Scikit-HEP)
 4. [`cookie`](https://github.com/scientific-python/cookie), Scientific Python (originally made by Scikit-HEP)
+5. [INTERSECT's packaging tutorial](https://intersect-training.org/packaging/), INTERSECT
 
 ---
 class: end-slide, center
