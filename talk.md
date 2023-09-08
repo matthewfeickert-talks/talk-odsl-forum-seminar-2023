@@ -685,6 +685,13 @@ Backup
 ]
 
 ---
+# Julia ecosystem for easier CUDA
+
+.huge[
+Julia's packaging system seems to be working, as using [CUDA libraries in Julia](https://juliagpu.org/) is rather simple.
+]
+
+---
 
 class: end-slide, center
 count: false
