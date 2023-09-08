@@ -399,7 +399,7 @@ Can .bold[develop] your code under `src/` and have .bold[immediate] access to it
 ]
 
 ---
-# Going further: Distributing code
+# Going further: Distributing packages
 
 .huge[
 If your code is publicly available on the WWW in a Git repository, you've already done a version of distribution!
@@ -426,7 +426,7 @@ Caveat: This only works for pure-Python packages
 ]
 
 ---
-# Going further: Distributing code
+# Going further: Distributing packages
 
 .huge[
 Ideally we'd prefer a more organized approach: distribution through a .bold[package index]
@@ -441,7 +441,7 @@ Distributions that `pip` can install:
 ]
 
 ---
-# Going further: Distributing code
+# Going further: Distributing packages
 
 .huge[
 To create these .bold[distributions] from source code, rely on our package .bold[build backend] (e.g. [`hatchling`](https://hatch.pypa.io/)) and .bold[build frontend] tool like [`build`](https://pypa-build.readthedocs.io/en/stable/)
@@ -465,7 +465,7 @@ rosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz
 ```
 
 ---
-# Going further: Distributing code
+# Going further: Distributing packages
 
 .huge[
 Can now [securely upload](https://blog.pypi.org/posts/2023-04-20-introducing-trusted-publishers/) the distributions under `./dist/` to [.italic[any] package index](https://packaging.python.org/en/latest/guides/hosting-your-own-index/) that understands how to use them.
@@ -480,29 +480,66 @@ The most common is the [Python Package Index (PyPI)](https://pypi.org/) which se
 ]
 
 ---
-# Next steps: Packaging your code
+# Distributing packages: [conda-forge](https://conda-forge.org/)
 
 .huge[
-x Real emphasis is just that .bold[your code is now installable]
-   - Anywhere your Python virtual environment is active you can use your code
+The `conda` family of package managers ([`conda`](https://docs.conda.io/), [`mamba`](https://mamba.readthedocs.io/), [`micromamba`](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html), [`pixi`](https://prefix.dev/docs/pixi/overview)) take an alternative approach from `pip`.
 
-x Use a `src/` directory layout and then use a packaging tool
-x Allow for editable installation
-```
-python -m pip install --editable .
-```
-so that you can develop and use the code as you go
-* Compiled code extensions or pure Python?
-* Application or library?
+Instead of installing Python packages, they act as general purpose package managers and install .bold[all dependencies] (including Python) as OS and architecture specific .bold[built binaries] (`.conda` files &mdash; `zip`file containing compressed `tar` files) hosted on conda-forge.
+
+Allows an additional level of runtime environment specification not possible with just `pip`, though getting environment solves right can become more complicated.
 ]
 
 ---
-# Going beyond, distributing
+# Distributing packages: [conda-forge](https://conda-forge.org/)
 
-* Use `build` to create source distributions (`sdist`) and wheels
-* Distribute to PyPI
-* Profit
-* conda-forge and binaries
+.huge[
+Popular in scientific computing as arbitrary binaries can be hosted, including compilers (e.g. `gcc`, Fortran) and even the [full NVIDIA CUDA stack](https://twitter.com/jeremyphoward/status/1697435241152127369)!
+
+With the change to full binaries only this also requires that specification of the environment being installed is important.
+
+With sdists and wheels, if there is no compatible wheel available, `pip` will automatically .bold[fall back] to trying to locally build from the sidst. Can't do that if there is .bold[no matching `.conda` binary]!
+]
+
+---
+# Defining the environment: [Application vs. Library](https://iscinumpy.dev/post/app-vs-library/)
+
+.huge[
+Have been reasonably assuming that packaged code can be used in arbitrary environments with other code that is compatible (library-like).
+
+For distributing code, this is probably the correct view, but your analysis is not a library. Your analysis is an application (a hand crafted implementation of code from libraries).
+
+While your analysis might run with arbitrary configurations of the defined libraries and runtimes (.bold[reusable]) want to also have a hash-level specified version for .bold[reproduciblity]: a .bold[lock file]
+]
+
+---
+# Defining the environment: Lock file
+
+.huge[
+Lock files are simple: A hash level record of every dependency in the environment.
+
+Allow for reproducibility by simply being an list of every file to download from the internet.
+
+Should be programmatically generated from a high level requirements file and maintained in version control with your analysis.
+
+* For `pip`: [`pip-tools`](https://pip-tools.readthedocs.io/en/latest/), [`pdm`](https://pdm.fming.dev/)
+* For `conda` family: [`conda-lock`](https://conda.github.io/conda-lock/), [`pixi`](https://prefix.dev/docs/pixi/)
+]
+
+---
+# Defining the environment: Comparing to Julia
+
+.huge[
+The approach of [`pixi`](https://prefix.dev/docs/pixi/) is [similar to Julia](https://pkgdocs.julialang.org/v1/toml-files/).
+
+* `Project.toml`: .bold[describes the project on a high level]
+* `Manifest.toml`: .bold[absolute record] of the state of the packages in the environment (a lock file)
+
+Julia's package manager [`Pkg.jl`](https://pkgdocs.julialang.org/v1/) provides users a high level interface to edit `Project.toml` and then automatically updates `Manifest.toml` in response. Reproducibility of environment by default!
+
+* Library: `Project.toml` in version control
+* Application: `Project.toml` and `Manifest.toml` in version control
+]
 
 ---
 # Best practices
