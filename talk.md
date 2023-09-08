@@ -202,7 +202,7 @@ The .green[okay news]: You can probably default to the simplest thing
 ]
 
 * pure Python: Probably [`hatch`](https://github.com/ofek/hatch)
-* compiled extensions: Probably [`setuptools` + `pybind11`](https://pybind11.readthedocs.io/)
+* compiled extensions: Probably [`setuptools` + `pybind11`](https://pybind11.readthedocs.io/) or [`scikit-build-core`](https://scikit-build-core.readthedocs.io/) + [`pybind11`](https://github.com/pybind/pybind11)
 
 .kol-1-2[
 <br>
