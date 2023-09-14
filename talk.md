@@ -448,7 +448,7 @@ build-backend = "scikit_build_core.build"
 ]
 
 .large[
-```
+```cmake
 # Specify CMake version and project language
 cmake_minimum_required(VERSION 3.15...3.26)
 project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)
@@ -532,12 +532,11 @@ $ python -m pip install \
 (more reasonable font size, and more common, example)
 
 ```
+# Works for pure-Python packages
 $ python -m pip install --upgrade "git+https://github.com/scikit-hep/pyhf.git"
+# as well as packages with compiled extensions
+$ python -m pip install --upgrade "git+https://github.com/scikit-hep/iminuit.git"
 ```
-
-.huge[
-Caveat: This only works for pure-Python packages
-]
 
 ---
 # Going further: Distributing packages
@@ -636,7 +635,7 @@ Allow for reproducibility by simply being an list of every file to download from
 
 Should be programmatically generated from a high level requirements file and maintained in version control with your analysis.
 
-* For `pip`: [`pip-tools`](https://pip-tools.readthedocs.io/en/latest/), [`pdm`](https://pdm.fming.dev/)
+* For `pip`: [`pip-tools`](https://pip-tools.readthedocs.io/en/latest/), [`pdm`](https://pdm.fming.dev/), [`pipenv`](https://pipenv.pypa.io/), [`poetry`](https://python-poetry.org/)
 * For `conda` family: [`conda-lock`](https://conda.github.io/conda-lock/), [`pixi`](https://prefix.dev/docs/pixi/)
 ]
 
@@ -774,6 +773,7 @@ Find and start working with Research Software Engineers (RSE).
 2. [Python Packaging User Guide, Packaging Python Projects Tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/), The PyPA
 3. [Scientific Python Library Development Guide](https://learn.scientific-python.org/development/), Scientific Python (originally made by Scikit-HEP)
 4. [`cookie`](https://github.com/scientific-python/cookie), Scientific Python (originally made by Scikit-HEP)
+5. [INTERSECT's packaging tutorial](https://intersect-training.org/packaging/), INTERSECT
 
 ---
 class: end-slide, center
