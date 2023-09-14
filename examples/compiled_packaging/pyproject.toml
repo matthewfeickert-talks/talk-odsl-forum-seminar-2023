@@ -52,4 +52,4 @@ local_scheme = "no-local-version"
 # Need to give root as we aren't at the same level as the git repo
 root = "../.."
 # Need to provide path relative to root
-# write_to = "examples/compiled_packaging/src/rosen_cpp/_version.py"
+write_to = "examples/compiled_packaging/src/rosen_cpp/_version.py"
