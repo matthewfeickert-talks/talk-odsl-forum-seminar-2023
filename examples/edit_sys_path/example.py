@@ -8,9 +8,10 @@ from scipy.optimize import minimize
 
 # %%
 # Make ./code/utils.py visible to sys.path
-sys.path.insert(1, str(Path().cwd() / "code"))
+# sys.path position 2 should be after cwd and before activated virtual environment
+sys.path.insert(2, str(Path().cwd() / "code"))
 # If file is a .py file and not a notebook, then can use:
-# sys.path.insert(1, str(Path(__file__).parent / "code"))
+# sys.path.insert(2, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 
 # %%

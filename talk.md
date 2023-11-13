@@ -111,7 +111,8 @@ import sys
 from pathlib import Path
 
 # Make ./code/utils.py visible to sys.path
-sys.path.insert(1, str(Path(__file__).parent / "code"))
+# sys.path[2] should be after cwd and before virtual environment
+sys.path.insert(2, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 
 x0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])
@@ -133,7 +134,7 @@ In this first scenario, you will probably see a lot of `sys.path` manipulation a
 
 ```python
 # Make ./code/utils.py visible to sys.path
-sys.path.insert(1, str(Path(__file__).parent / "code"))
+sys.path.insert(2, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 ```
 
