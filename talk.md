@@ -111,6 +111,7 @@ import sys
 from pathlib import Path
 
 # Make ./code/utils.py visible to sys.path
+# sys.path[1] should be after cwd and before virtual environment
 sys.path.insert(1, str(Path(__file__).parent / "code"))
 from utils import rosen, rosen_der
 
