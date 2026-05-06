@@ -8,7 +8,9 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "rosen-cpp"
-dynamic = ["version"]
+# DEBUG: Can't handle the dynamic metadata without the full .git/ directory
+# dynamic = ["version"]
+version = "0.0.3"
 description = "Example package for demonstration"
 readme = "README.md"
 license = { text = "MIT" }  # SPDX short identifier
