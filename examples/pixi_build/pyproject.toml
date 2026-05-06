@@ -72,14 +72,15 @@ rosen-cpp = { path = "." }
 
 [tool.pixi.package]
 name = "rosen-cpp"
-# How to use ignore-project-manifest false to get dynamic version?
+# As of Pixi v0.67.2 can't pickup dynamic metadata
+# with package.build.config.ignore-pyproject-manifest = false
 version = "0.0.3"
 
 [tool.pixi.package.build]
 backend = { name = "pixi-build-python", version = "*" }
 # c.f. https://pixi.prefix.dev/latest/build/backends/pixi-build-python/#compilers
 # c.f. https://pixi.prefix.dev/latest/build/backends/pixi-build-python/#ignore-pypi-mapping
-config = { compilers = ["cxx"], ignore-pyproject-manifest = false, ignore-pypi-mapping = false }
+config = { compilers = ["cxx"], ignore-pypi-mapping = false }
 
 [tool.pixi.package.build-dependencies]
 cmake = ">=4.2.0"
@@ -88,10 +89,12 @@ ninja = ">=1.13.0"
 [tool.pixi.package.host-dependencies]
 python = "*"
 uv = "*"
-scikit-build-core = ">=0.5.0"
-pybind11 = ">=2.10.0"
 setuptools_scm = "*"
+# Unneeded given package.build.config.ignore-pypi-mapping = false
+# scikit-build-core = ">=0.5.0"
+# pybind11 = ">=2.10.0"
 
+# This table is unneeded given package.build.config.ignore-pypi-mapping = false
 # [tool.pixi.package.run-dependencies]
 # scipy = ">=1.6.0"
 
