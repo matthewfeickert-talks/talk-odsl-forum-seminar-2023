@@ -35,7 +35,7 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        python -m pip install --upgrade pip wheel
+        python -m pip install --upgrade pip
         python -m pip install --upgrade scipy
 
     - name: Run code with sys path edited
@@ -64,7 +64,7 @@ jobs:
 
     - name: Local install
       run: |
-        python -m pip install --upgrade pip wheel
+        python -m pip install --upgrade pip
         cd examples/simple_packaging
         python -m pip install .
 
@@ -131,7 +131,7 @@ jobs:
 
     - name: Local install
       run: |
-        python -m pip install --upgrade pip wheel
+        python -m pip install --upgrade pip
         cd examples/compiled_packaging
         python -m pip install .
 
