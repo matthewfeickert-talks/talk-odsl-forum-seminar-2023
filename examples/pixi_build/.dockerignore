@@ -1,6 +1,6 @@
 .pixi/
 # Need git for setuptools_scm
-# .git/
+.git/
 __pycache__/
 *.pt
 *.png
