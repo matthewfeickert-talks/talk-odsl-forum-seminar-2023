@@ -18,7 +18,7 @@ authors = [
 maintainers = [
   { name = "Matthew Feickert", email = "matthew.feickert@cern.ch" },
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 
 dependencies = [
     "scipy>=1.6.0",
@@ -29,10 +29,11 @@ classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Topic :: Scientific/Engineering :: Physics",
 ]
 
@@ -55,3 +56,38 @@ path = "rosen_cpp/_version.py"
 template = '''
 version = "${version}"
 '''
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["linux-64", "linux-aarch64", "osx-arm64"]
+preview = ["pixi-build"]
+
+[tool.pixi.workspace.build-variants]
+python = ["3.10.*", "3.11.*", "3.12.*", "3.13.*", "3.14.*"]
+
+[tool.pixi.dependencies]
+rosen-cpp = { path = "." }
+
+[tool.pixi.tasks]
+
+[tool.pixi.package]
+name = "rosen-cpp"
+version = "0.1.0"
+
+[tool.pixi.package.build]
+backend = { name = "pixi-build-python", version = "*" }
+# c.f. https://pixi.prefix.dev/latest/build/backends/pixi-build-python/#compilers
+config = { compilers = ["cxx"] }
+
+[tool.pixi.package.build-dependencies]
+cmake = ">=4.2.0"
+ninja = ">=1.13.0"
+
+[tool.pixi.package.host-dependencies]
+python = "*"
+uv = "*"
+scikit-build-core = ">=0.5.0"
+pybind11 = ">=2.10.0"
+
+[tool.pixi.package.run-dependencies]
+scipy = ">=1.6.0"
