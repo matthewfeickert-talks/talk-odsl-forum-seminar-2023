@@ -24,12 +24,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -53,12 +53,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -105,7 +105,7 @@ jobs:
         pytest tests/
 
     - name: Upload simple packaging dists
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: simple_packaging
         path: examples/simple_packaging/dist/
@@ -120,12 +120,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -172,7 +172,7 @@ jobs:
         pytest tests/
 
     - name: Upload compiled packaging dists
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: compiled_packaging
         path: examples/compiled_packaging/dist/
