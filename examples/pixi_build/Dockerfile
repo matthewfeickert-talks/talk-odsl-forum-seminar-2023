@@ -9,7 +9,15 @@ ARG ENVIRONMENT
 WORKDIR /app
 # COPY . .
 COPY ./examples/pixi_build/ .
+RUN ls -lhtra
 RUN pixi global install git
+RUN pixi init _debug && \
+    cd _debug && \
+    pixi add cxx-compiler cmake ninja uv && \
+    pixi run "cd ../ && \
+    uv venv && \
+    VIRTUAL_ENV=.venv uv pip install -vv . && \
+    VIRTUAL_ENV=.venv uv pip list"
 RUN pixi install -vv --locked --environment $ENVIRONMENT
 # Activate ENVIRONMENT at container runtime by using the Pixi environment
 # activation script as the container ENTRYPOINT
