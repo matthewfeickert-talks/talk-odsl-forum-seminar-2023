@@ -7,9 +7,8 @@ FROM ghcr.io/prefix-dev/pixi:noble AS build
 ARG ENVIRONMENT
 
 WORKDIR /app
-# COPY . .
-COPY ./examples/pixi_build/ .
-# RUN pixi global install git
+COPY . .
+WORKDIR /app/examples/pixi_build/
 RUN pixi install -vv --locked --environment $ENVIRONMENT
 # Activate ENVIRONMENT at container runtime by using the Pixi environment
 # activation script as the container ENTRYPOINT
