@@ -1,0 +1,18 @@
+# syntax=docker/dockerfile:1.4
+ARG ENVIRONMENT="default"
+
+FROM ghcr.io/prefix-dev/pixi:noble AS build
+
+# Redeclaring ARGS in a stage without a value inherits the global default
+ARG ENVIRONMENT
+
+WORKDIR /app
+COPY ./examples/pixi_build/ .
+RUN pixi init /_debug && \
+    cd /_debug && \
+    pixi add cxx-compiler cmake ninja uv && \
+    pixi run "uv venv && \
+    VIRTUAL_ENV=.venv uv pip install -vv /app && \
+    VIRTUAL_ENV=.venv uv pip list"
+
+WORKDIR /_debug
