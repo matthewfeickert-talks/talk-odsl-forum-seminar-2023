@@ -22,7 +22,7 @@ ARG ENVIRONMENT
 
 WORKDIR /app
 COPY --from=build /app/examples/pixi_build/.pixi/envs/$ENVIRONMENT /app/.pixi/envs/$ENVIRONMENT
-COPY --from=build /app/examples/pixi_build/pixi.toml /app/pixi.toml
+COPY --from=build /app/examples/pixi_build/pyproject.toml /app/pyproject.toml
 COPY --from=build /app/examples/pixi_build/pixi.lock /app/pixi.lock
 # The ignore files are needed for 'pixi run' to work in the container
 COPY --from=build /app/examples/pixi_build/.pixi/.gitignore /app/.pixi/.gitignore
