@@ -46,6 +46,12 @@ Documentation = "https://github.com/matthewfeickert-talks/talk-odsl-forum-semina
 
 [tool.scikit-build]
 metadata.version.provider = "scikit_build_core.metadata.setuptools_scm"
+# rattler-build (through pixi-build-python) exports
+# CMAKE_GENERATOR='Unix Makefiles' as a default behavior, which overrides
+# scikit-build-core's default of Ninja. To override this and restore the
+# default behavior provide scikit-build-core explicit arguments.
+# c.f. https://github.com/prefix-dev/rattler-build/issues/2487
+cmake.args = ["-GNinja"]
 
 [tool.setuptools_scm]
 # Ignore the commit hash in version
