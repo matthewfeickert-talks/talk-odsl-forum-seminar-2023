@@ -5,4 +5,5 @@
 !.git/
 !examples/pixi_build/
 
+# Ignore Pixi environment directory
 examples/pixi_build/.pixi/
