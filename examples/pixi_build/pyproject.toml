@@ -79,7 +79,11 @@ rosen-cpp = { path = "." }
 [tool.pixi.tasks]
 
 [tool.pixi.tasks.docker-build]
-cmd = "docker pull ghcr.io/prefix-dev/pixi:noble && docker build --file ./Dockerfile --tag talk-odsl-forum-seminar/pixi-build:debug ."
+description = "Build a Docker container image containing the Pixi workspace default environment"
+cmd = """
+docker pull ghcr.io/prefix-dev/pixi:noble && \
+docker build --file ./Dockerfile --tag talk-odsl-forum-seminar/pixi-build:debug .
+"""
 
 [tool.pixi.package]
 name = "rosen-cpp"
