@@ -10,8 +10,3 @@ docker build \
     --file ./examples/pixi_build/Dockerfile \
     --tag talk-odsl-forum-seminar/pixi-build:debug \
     .
-
-# docker build \
-#     --file ./examples/pixi_build/uv_Dockerfile \
-#     --tag talk-odsl-forum-seminar/pixi-build:uv-debug \
-#     .
