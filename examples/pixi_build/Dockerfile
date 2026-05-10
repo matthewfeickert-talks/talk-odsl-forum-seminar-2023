@@ -8,8 +8,7 @@ ARG ENVIRONMENT
 WORKDIR /app
 COPY . .
 WORKDIR /app/examples/pixi_build/
-# BUILD ERROR HAPPENS HERE
-RUN pixi install -vv --locked --environment $ENVIRONMENT
+RUN pixi install --locked --environment $ENVIRONMENT
 # Activate ENVIRONMENT at container runtime by using the Pixi environment
 # activation script as the container ENTRYPOINT
 RUN echo "#!/usr/bin/env bash" > /app/entrypoint.sh && \
