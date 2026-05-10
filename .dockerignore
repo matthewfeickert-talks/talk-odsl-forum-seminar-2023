@@ -1,9 +1,0 @@
-# Ignore everything
-*
-
-# Allow files and directories
-!.git/
-!examples/pixi_build/
-
-# Ignore Pixi environment directory
-examples/pixi_build/.pixi/
