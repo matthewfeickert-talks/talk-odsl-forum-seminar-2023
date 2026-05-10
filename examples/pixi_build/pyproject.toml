@@ -8,7 +8,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "rosen-cpp"
-# DEBUG: Can't handle the dynamic metadata without the full .git/ directory
+# FIXME: Can't handle the dynamic metadata without the full .git/ directory
 # dynamic = ["version"]
 version = "0.0.3"
 description = "Example package for demonstration"
